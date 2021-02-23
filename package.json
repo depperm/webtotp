@@ -4,6 +4,7 @@
   "description": "Generate a TOTP given a date and secret",
   "license": "MIT",
   "repository": "depperm/webtotp",
+  "main": "index.js",
   "keywords": [
     "webtotp",
     "otp",
