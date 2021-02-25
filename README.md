@@ -1,8 +1,8 @@
 # webtotp
 
-[![npm (scoped)](https://img.shields.io/badge/npm-2.0.0-green)](https://www.npmjs.com/package/webtotp)
+[![npm (scoped)](https://img.shields.io/badge/npm-2.1.0-green)](https://www.npmjs.com/package/webtotp)
 
-Generate and validate current/last token
+Generate and validate current/last TOTP. Based off of https://tools.ietf.org/html/rfc6238.
 
 ## Install
 
@@ -12,7 +12,7 @@ Generate and validate current/last token
 
 1. Ask a user to setup OTP.
 2. They set a date (past or future) of their choosing and a secret (whatever they want, this shouldn't be a password but it should remain secret), that they need to remember. These are then stored encrypted on the server.
-3. Either create a frontend TOTP generator near the login screen (or on a seperate step) that users can enter token date and secret OR use a public facing one (https://depperm.github.io/ - there are dangers/risks with 3rd party sites, the main one being potential logging of input).
+3. Either create a frontend TOTP generator near the login screen (or on a seperate step) that users can enter token date and secret OR use a public facing one (Live example https://depperm.github.io/ - there are dangers/risks with 3rd party sites, the main one being potential logging of input).
 4. Then on the server you can validate the TOTP based on a generated token from the decrypted date and secret.
 
 ```
