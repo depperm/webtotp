@@ -1,6 +1,6 @@
 {
   "name": "webtotp",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Generate a TOTP given a date and secret",
   "license": "MIT",
   "repository": "depperm/webtotp",
