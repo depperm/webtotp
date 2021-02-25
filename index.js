@@ -53,8 +53,7 @@ const webtotp = (tokenDate, tokenSecret='', tokenTime=30, hashType='SHA1', token
 */
 const validate = (tokenToMatch, tokenDate, tokenSecret='', tokenTime=30, hashType='SHA1', tokenLength=6)=>{
 	let tokenA = webtotp(tokenDate, tokenSecret, tokenTime, hashType, tokenLength)
-	let dir = (new Date()).getTime() > tokenDate.getTime() ? 1000 : 1000
-	let tokenB = webtotp(new Date(tokenDate.getTime() + (tokenTime * dir)), tokenSecret, tokenTime, hashType, tokenLength)
+	let tokenB = webtotp(new Date(tokenDate.getTime() + (tokenTime * 1000)), tokenSecret, tokenTime, hashType, tokenLength)
 
 	return tokenA.token === tokenToMatch || tokenB.token === tokenToMatch
 }
