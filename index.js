@@ -23,16 +23,12 @@ const webtotp = (tokenDate, tokenSecret='', tokenTime=30, hashType='SHA1', token
 	  result.timeUntilChange = Math.abs(diff) % 1;
 	} else {
 		diff = (tokenDate.getTime() - (new Date()).getTime()) / interval
-	  result.timeUntilChange =  1- (Math.abs(diff) % 1);
+	  result.timeUntilChange =  1 - (Math.abs(diff) % 1);
 	}
 
-	let hash = crypto.createHmac(hashType, Buffer.from(tokenSecret).toString('hex')).update((Math.abs(Math.floor(diff))).toString()).digest('hex')
+	let byteArray = crypto.createHmac(hashType, Buffer.from(tokenSecret).toString('hex'))
+		.update((Math.abs(Math.floor(diff))).toString()).digest()
 
-	// hash to byte array
-	let byteArray = [];
-	for (var i = 0; i < hash.length; i += 2) {
-	  byteArray.push(parseInt(hash.substr(i, 2), 16));
-	}
 	let offset = byteArray[byteArray.length-1] & 0xf;
 
 	let binary = ((byteArray[offset] & 0x7f) << 24) |

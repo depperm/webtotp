@@ -1,6 +1,6 @@
 # webtotp
 
-[![npm (scoped)](https://img.shields.io/badge/npm-2.1.0-green)](https://www.npmjs.com/package/webtotp)
+[![npm (scoped)](https://img.shields.io/badge/npm-2.2.0-green)](https://www.npmjs.com/package/webtotp)
 
 Generate and validate current/last TOTP. Based off of https://tools.ietf.org/html/rfc6238.
 
